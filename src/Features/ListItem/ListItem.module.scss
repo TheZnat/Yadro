@@ -1,0 +1,98 @@
+.listItem {
+  display: flex;
+  height: 133px;
+  background: var(--color-bg-block);
+  box-sizing: border-box;
+  padding: 20px 48px;
+  width: 100%;
+  justify-content: space-between;
+
+  border-radius: 18px;
+  border: 1px solid var(--color-gray-lighter);
+
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.listItem__profile-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: flex;
+}
+
+.listItem__profile {
+  display: flex;
+  gap: 50px;
+  width: 510px;
+}
+
+.listItem__main-info,
+.listItem__contact-info,
+.listItem__status {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+.listItem__main-info__name {
+}
+
+.listItem__main-info__work-info {
+  display: flex;
+  gap: 24px;
+}
+
+.listItem__main-info__work-info__division {
+}
+
+.listItem__main-info__work-info__position {
+}
+
+.listItem__contact-info {
+  width: 280px;
+}
+
+.listItem__contact-info__tel-number {
+}
+
+.listItem__contact-info__email {
+}
+
+.listItem__status {
+}
+
+.listItem__status__info__text {
+  color: rgb(2, 168, 13);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: right;
+  
+}
+
+.listItem__status__bth {
+  border-radius: 20px;
+  width: 167px;
+  height: 31px;
+  background-color: var(--color-primary-blue);
+  border: none;
+
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+  color: var(--color-white);
+}
+
+.listItem__status__bth:hover {
+    background-color: var(--color-primary-blue-hover);
+}

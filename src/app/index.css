@@ -1,0 +1,41 @@
+:root {
+  --color-bg-block: #1e1e1e;
+  --color-primary-blue: #246aee;
+  --color-primary-blue-hover: #4581f3;
+  --color-gray-lighter: #464646;
+  --color-secondary-text: #999999;
+  --color-gray-light: #d9d9d9;
+  --color-gray: #262626;
+  --color-white: #feffff;
+
+  --color-green: #00f811;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  /* scroll-behavior: smooth; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; */
+  font-family: "Inter", serif;
+  background-color: #242424;
+  color: #feffff;
+}

@@ -1,0 +1,28 @@
+.profile-back-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 100%;
+  background: var(--color-bg-block);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--color-gray-lighter);
+}
+
+.profile-back-panel__button {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+  background-color: var(--color-primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.profile-back-panel__button:hover {
+  background-color: var(--color-primary-blue-hover);
+}

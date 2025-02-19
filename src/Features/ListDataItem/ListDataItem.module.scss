@@ -1,0 +1,34 @@
+.list-data__item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.list-data__item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eaeaea;
+}
+
+.list-data__item__name,
+.list-data__item__info {
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0%;
+}
+
+.list-data__item__name {
+  text-align: left;
+}
+
+.list-data__item__info {
+  text-align: right;
+  
+}

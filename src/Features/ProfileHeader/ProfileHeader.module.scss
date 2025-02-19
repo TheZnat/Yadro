@@ -1,0 +1,120 @@
+.profile-header {
+  height: 213px;
+  width: 100%;
+  padding-right: 46px;
+  padding-left: 46px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid var(--color-gray-light);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    -44.12deg,
+    rgb(0, 55, 233) 1.129%,
+    rgb(1, 1, 97) 97.975%
+  );
+  margin-top: 26px;
+}
+
+.profile-header__bg {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.profile-header__bg__first,
+.profile-header__bg__second,
+.profile-header__bg__third,
+.profile-header__bg__fourth {
+  position: absolute;
+  transform: rotate(-60deg);
+  z-index: -1;
+}
+
+.profile-header__bg__first {
+  width: 645.14px;
+  height: 486.53px;
+  background: linear-gradient(
+    -45deg,
+    rgb(0, 235, 225) 0.018%,
+    rgb(0, 65, 133) 97.221%
+  );
+  left: -251px;
+  top: -125px;
+}
+
+.profile-header__bg__second {
+  width: 645.14px;
+  height: 486.53px;
+  background: linear-gradient(
+    -45.57deg,
+    rgb(0, 141, 226) -0.416%,
+    rgb(0, 21, 88) 99.916%
+  );
+  top: -127px;
+  left: 294px;
+}
+
+.profile-header__bg__fourth {
+  width: 470.14px;
+  height: 134.07px;
+  right: -283px;
+  top: 25px;
+  background: linear-gradient(
+    -64.12deg,
+    rgb(1, 1, 194) 3.769%,
+    rgb(0, 1, 119) 100.416%
+  );
+}
+
+.profile-header__info {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-header__info__data {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-header__info__data__avatar {
+  width: 158px;
+  height: 158px;
+  background-color: #626161;
+  border-radius: 16px;
+}
+
+.profile-header__info__data__text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 2px;
+  align-items: start;
+}
+
+.profile-header__info__data__text__status {
+  color: var(--color-green);
+}
+
+.profile-header__info__data__text__work-info {
+}
+
+.profile-header__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.profile-header__actions__button {
+  color: var(--color-white);
+  width: 260px;
+  height: 42px;
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 16px;
+  background: rgb(36, 106, 238);
+}

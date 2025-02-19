@@ -1,0 +1,36 @@
+.input-from {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.input-from:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-light);
+}
+
+.input-from__old-info {
+  display: flex;
+  gap: 12px;
+}
+
+.input-from__input {
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0%;
+  width: 240px;
+  height: 25px;
+  padding: 2px;
+  min-width: 10ch;
+  border: none;
+  background-color: transparent;
+}

@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  padding: 17px 40px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
