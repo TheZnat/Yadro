@@ -8,10 +8,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/edit" element={<Edit />} />
-      {/* <Route path="/profile:id" element={<Provile/>} />
-      <Route path="/profile:id/edit" element={<Edit/>} /> */}
+      <Route path="/profile/:id" element={<Profile />} />
+      <Route path="/edit/:id" element={<Edit />} />
       <Route
         path="*"
         element={

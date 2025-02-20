@@ -30,5 +30,11 @@
 
 .list-data__item__info {
   text-align: right;
-  
+}
+
+.list-data{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
 }

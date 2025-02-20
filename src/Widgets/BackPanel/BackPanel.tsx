@@ -1,9 +1,17 @@
+import React from "react";
 import styles from "./BackPanel.module.scss";
 
-const BackPanel = () => {
+interface BackPanelProps {
+  onClickFunction: () => void;
+}
+const BackPanel: React.FC<BackPanelProps> = ({ onClickFunction }) => {
   return (
     <menu className={styles["profile-back-panel"]}>
-      <button type="button" className={styles["profile-back-panel__button"]}>
+      <button
+        type="button"
+        className={styles["profile-back-panel__button"]}
+        onClick={onClickFunction}
+      >
         <svg
           width="13"
           height="12"
@@ -19,7 +27,7 @@ const BackPanel = () => {
             transform="rotate(-180 13 6.80005)"
             fill="white"
           />
-          <path d="M6 11L2 6L6 1" stroke="white" stroke-width="1.6" />
+          <path d="M6 11L2 6L6 1" stroke="white" strokeWidth="1.6" />
         </svg>
       </button>
     </menu>

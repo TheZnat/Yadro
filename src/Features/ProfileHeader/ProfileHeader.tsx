@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./ProfileHeader.module.scss";
+import { Employees } from "../../Shared/types/data";
 
-const ProfileHeader: React.FC = ({ dataEmployee = {} }) => {
+const ProfileHeader: React.FC<Employees> = ({
+  dataEmployee = {},
+  handlerDeleteBth,
+  handlerEditBth,
+}) => {
   return (
     <div className={styles["profile-header"]}>
       <div className={styles["profile-header__bg"]}>
@@ -12,39 +17,54 @@ const ProfileHeader: React.FC = ({ dataEmployee = {} }) => {
 
       <div className={styles["profile-header__info"]}>
         <div className={styles["profile-header__info__data"]}>
-          <div className={styles["profile-header__info__data__avatar"]}></div>
+          {dataEmployee.workInfo.avatar.value.length > 0 ? (
+            <img
+              src={dataEmployee.workInfo.avatar.value}
+              alt="avatar"
+              className={styles["profile-header__info__data__avatar"]}
+            />
+          ) : (
+            <div className={styles["profile-header__info__data__avatar"]}></div>
+          )}
+
           <div className={styles["profile-header__info__data__text"]}>
             <p className={styles["profile-header__info__data__text__status"]}>
-              {dataEmployee.status}
+              {dataEmployee?.workInfo?.status?.value || "Неизвестно"}
             </p>
             <p
               className={styles["profile-header__info__data__text__work-info"]}
             >
-              {dataEmployee.name}
+              {dataEmployee?.fio || "ФИО не указано"}
             </p>
             <p
               className={styles["profile-header__info__data__text__work-info"]}
             >
-              {dataEmployee.workInfo.division}
+              {dataEmployee?.workInfo?.division?.value || "Нет данных"}
             </p>
             <p
               className={styles["profile-header__info__data__text__work-info"]}
             >
-              {dataEmployee.workInfo.position}
+              {dataEmployee?.workInfo?.level?.value || "Нет данных"}
             </p>
             <p
               className={styles["profile-header__info__data__text__work-info"]}
             >
-              {dataEmployee.personal.dateOfBirth}
+              {dataEmployee?.contactInfo?.city?.value || "Город не указан"}
             </p>
           </div>
         </div>
 
         <div className={styles["profile-header__actions"]}>
-          <button className={styles["profile-header__actions__button"]}>
+          <button
+            className={styles["profile-header__actions__button"]}
+            onClick={handlerEditBth}
+          >
             Изменить данные
           </button>
-          <button className={styles["profile-header__actions__button"]}>
+          <button
+            className={styles["profile-header__actions__button"]}
+            onClick={handlerDeleteBth}
+          >
             Удалить сотрудника
           </button>
         </div>

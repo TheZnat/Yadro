@@ -1,48 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./HomePage.module.scss";
 import Search from "../../Features/Search/Search";
-import ListItem from "../../Features/ListItem/ListItem";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../app/Store/store";
+import List from "../../Features/List/List";
+import { fetchEmployees } from "../../app/entities/employee/model/thunks";
 
 const HomePage: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { isLoading } = useSelector((state: RootState) => state.data);
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <header className={styles["header"]}>
         <h1 className={styles["title"]}>Тестовое задание в компанию yadro</h1>
         <Search />
       </header>
-
       <main>
-        <section className={styles["list"]}>
-          <ListItem
-            dataEmployee={{
-              name: "Кузинов Максим Александровчи",
-              workInfo: {
-                division: "Разработчик",
-                position: "Frontend",
-              },
-              contactInfo: {
-                email: "maxim.kuzinov@yadro.ru",
-                phone: "+7 (999) 999-99-99",
-              },
-              status: "Работает",
-            }}
-          />
-
-          <ListItem
-            dataEmployee={{
-              name: "Кузинов Максим Алекс",
-              workInfo: {
-                division: "Разработчик",
-                position: "Аналитик",
-              },
-              contactInfo: {
-                email: "maxim.kuzinov@",
-                phone: "+7 (999) 999-99-99",
-              },
-              status: "Работает",
-            }}
-          />
-        </section>
+        <List />
       </main>
     </>
   );

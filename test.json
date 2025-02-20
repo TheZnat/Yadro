@@ -1,0 +1,209 @@
+{
+    "employees": [
+      {
+        "id": "e17d19ac-6177-4ddf-b3ea-8bc3672d1374",
+        "fio": "Максим Кузинов",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "HR" },
+          "level": { "label": "Уровень", "value": "Руководитель" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "11.02.2022" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "maxim.kuzinov@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 418-69-30" },
+          "city": { "label": "Город", "value": "Санкт-Петербург" }
+        }
+      },
+      {
+        "id": "ec8f9b5b-156a-4b85-8b61-546509245249",
+        "fio": "Анна Петрова",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "DevOps" },
+          "level": { "label": "Уровень", "value": "Middle" },
+          "schedule": { "label": "График работы", "value": "Удаленно" },
+          "dateOfHiring": { "label": "Дата найма", "value": "01.06.2021" },
+          "avatar": { "label": "Фото", "value": "https://avatars.dzeninfra.ru/get-zen_doc/3310860/pub_5f34e8c4b6cc96244dffa9c6_5f401413b291c329ebcb7bfa/scale_1200" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "anna.petrova@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 987-65-43" },
+          "city": { "label": "Город", "value": "Санкт-Петербург" }
+        }
+      },
+      {
+        "id": "f4356c47-8a71-4df8-b682-259b4a11f0a3",
+        "fio": "Иван Сидоров",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "в отпуске" },
+          "division": { "label": "Позиция", "value": "Frontend" },
+          "level": { "label": "Уровень", "value": "Middle" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "15.09.2020" },
+          "avatar": { "label": "Фото", "value": "https://balance2.pravoved.ru/userfiles/articledocs/art/58/7d0-1aaf2f93.jpg" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "ivan.sidorov@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 654-32-10" },
+          "city": { "label": "Город", "value": "Санкт-Петербург" }
+        }
+      },
+      {
+        "id": "3f3f243d-44a9-4679-9b8d-8934ef2abfb4",
+        "fio": "Светлана Алексеева",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "Backend" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Удаленно" },
+          "dateOfHiring": { "label": "Дата найма", "value": "23.11.2022" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "svetlana.akseeva@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 423-67-89" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "f0f8d232-e7f2-48e1-b62e-d7477c94b7d9",
+        "fio": "Екатерина Михайлова",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "Product Manager" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "10.01.2019" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "ekaterina.mikhaylova@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 123-45-67" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "c7d70f9c-16e2-4d0c-9237-e0e8ed659f9a",
+        "fio": "Дмитрий Шаповалов",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "Frontend" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "02.03.2020" },
+          "avatar": { "label": "Фото", "value": "https://merp.pnzreg.ru/upload/iblock/e8a/хакер.png" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "dmitry.shapovalov@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 777-66-55" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "2fa221c9-93e1-4b7e-b27c-fb45162db9e3",
+        "fio": "Михаил Лебедев",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "в отпуске" },
+          "division": { "label": "Позиция", "value": "Backend" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Удаленно" },
+          "dateOfHiring": { "label": "Дата найма", "value": "12.07.2021" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "mikhail.lebedev@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 654-21-34" },
+          "city": { "label": "Город", "value": "Казань" }
+        }
+      },
+      {
+        "id": "86966a04-faa7-4086-b420-674b000acb79",
+        "fio": "Ольга Романова",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "Product Manager" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "21.09.2018" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "olga.romanova@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 852-34-67" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "0ad8f7d9-8bb2-4c4b-8fd8-81ec75f1d038",
+        "fio": "Александр Волков",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "на больничном" },
+          "division": { "label": "Позиция", "value": "Tester" },
+          "level": { "label": "Уровень", "value": "Middle" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "04.05.2019" },
+          "avatar": { "label": "Фото", "value": "https://avatars.mds.yandex.net/get-ydo/3925651/2a0000018b419984024decad32c589b2235e/diploma" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "alexandr.volkov@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 321-43-56" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "5d795b6e-b90d-4757-8f89-cc832c6b49d5",
+        "fio": "Марина Соколова",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "работает" },
+          "division": { "label": "Позиция", "value": "Frontend" },
+          "level": { "label": "Уровень", "value": "Middle " },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "13.08.2017" },
+          "avatar": { "label": "Фото", "value": "" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "marina.sokolova@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 745-22-19" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "72b7eae0-93c7-463f-b25e-9e1e499d0203",
+        "fio": "Виктория Воронова",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "на больничном" },
+          "division": { "label": "Позиция", "value": "Backend" },
+          "level": { "label": "Уровень", "value": "Middle" },
+          "schedule": { "label": "График работы", "value": "Гибрид" },
+          "dateOfHiring": { "label": "Дата найма", "value": "28.06.2020" },
+          "avatar": { "label": "Фото", "value": "" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "viktoria.voronova@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 565-78-23" },
+          "city": { "label": "Город", "value": "Москва" }
+        }
+      },
+      {
+        "id": "ddf4c1e2-b4b3-49a1-bae7-13df5c3d4532",
+        "fio": "Роман Степанов",
+        "workInfo": {
+          "status": { "label": "Статус", "value": "уволен" },
+          "division": { "label": "Позиция", "value": "Fullstack" },
+          "level": { "label": "Уровень", "value": "Senior" },
+          "schedule": { "label": "График работы", "value": "Удаленно" },
+          "dateOfHiring": { "label": "Дата найма", "value": "18.01.2018" },
+          "avatar": { "label": "Фото", "value": "https://cdn.hackaday.io/images/5064991534874634480.jpeg" }
+        },
+        "contactInfo": {
+          "email": { "label": "Email", "value": "roman.stepanov@yadro.ru" },
+          "phone": { "label": "Телефон", "value": "+7 (999) 545-32-17" },
+          "city": { "label": "Город", "value": "Казань" }
+        }
+      }
+    ]
+  }
+  

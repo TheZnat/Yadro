@@ -25,6 +25,13 @@
   display: flex;
 }
 
+.listItem__profile-avatar {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .listItem__profile {
   display: flex;
   gap: 50px;
@@ -68,14 +75,27 @@
 }
 
 .listItem__status__info__text {
-  color: rgb(2, 168, 13);
   font-family: Inter;
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0%;
   text-align: right;
-  
+}
+
+.status-active {
+  color: var(--color-green);
+}
+
+.status-vacation{
+  color: var(--color-blue);
+}
+
+.status-sick {
+  color: var(--color-orange);
+}
+.status-fired {
+  color: var(--color-red);
 }
 
 .listItem__status__bth {
@@ -85,7 +105,6 @@
   background-color: var(--color-primary-blue);
   border: none;
 
-
   font-size: 12px;
   font-weight: 400;
   line-height: 15px;
@@ -94,5 +113,5 @@
 }
 
 .listItem__status__bth:hover {
-    background-color: var(--color-primary-blue-hover);
+  background-color: var(--color-primary-blue-hover);
 }
