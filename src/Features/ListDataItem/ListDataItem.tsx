@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./ListDataItem.module.scss";
+import { v4 as uuidv4 } from "uuid";
 
 interface DataItem {
   label: string;
-  value: string | DataItem | DataItem[]; // Это позволяет работать с вложенными объектами или массивами
+  value: string | DataItem | DataItem[];
 }
 
 interface ListDataItemProps {
   dataEmployeeAllInfo: {
-    [key: string]: DataItem | DataItem[]; // Каждый элемент может быть объектом или массивом
+    [key: string]: DataItem | DataItem[];
   };
 }
 
@@ -34,13 +35,13 @@ const ListDataItem: React.FC<ListDataItemProps> = ({ dataEmployeeAllInfo }) => {
   };
 
   return (
-    <div className={styles["list-data"]}>
-      {Object.entries(dataEmployeeAllInfo).map(([key, value]) => (
-        <div key={key}>
+    <>
+      {Object.entries(dataEmployeeAllInfo).map(([_, value]) => (
+        <div key={uuidv4()} className={styles["list-data"]}>
           {renderData(value)} {/* Рендерим данные для каждого поля */}
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

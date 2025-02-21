@@ -34,3 +34,12 @@
   border: none;
   background-color: transparent;
 }
+
+.input-from-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
