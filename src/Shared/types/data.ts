@@ -1,22 +1,24 @@
-type LabelValue = {
+export interface LabelValue {
   label: string;
   value: string;
-};
+}
 
-type WorkInfo = {
+export interface WorkInfo {
+  [key: string]: LabelValue; // Добавляем индексный сигнатур
   status: LabelValue;
   division: LabelValue;
   level: LabelValue;
   schedule: LabelValue;
   dateOfHiring: LabelValue;
   avatar: LabelValue;
-};
+}
 
-type ContactInfo = {
+export interface ContactInfo {
+  [key: string]: LabelValue; // Добавляем индексный сигнатур
   email: LabelValue;
   phone: LabelValue;
   city: LabelValue;
-};
+}
 
 export interface Employees {
   id: string;

@@ -66,7 +66,7 @@ const Profile: React.FC = () => {
         <ProfileHeader
           dataEmployee={employee}
           handlerEditBth={handlerEditBth}
-          handlerDeleteBth={() => handlerDeleteBth(id)}
+          handlerDeleteBth={() => handlerDeleteBth(id ?? "")}
         />
       </header>
       <BackPanel onClickFunction={handleClick} />

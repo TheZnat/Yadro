@@ -1,21 +1,16 @@
 import React from "react";
 import styles from "./ListDataItem.module.scss";
 import { v4 as uuidv4 } from "uuid";
-
-interface DataItem {
-  label: string;
-  value: string | DataItem | DataItem[];
-}
+import { LabelValue } from "../../Shared/types/data";
 
 interface ListDataItemProps {
   dataEmployeeAllInfo: {
-    [key: string]: DataItem | DataItem[];
+    [key: string]: LabelValue | LabelValue[];
   };
 }
 
 const ListDataItem: React.FC<ListDataItemProps> = ({ dataEmployeeAllInfo }) => {
-  // Рекурсивная функция для рендеринга данных
-  const renderData = (data: DataItem | DataItem[]) => {
+  const renderData = (data: LabelValue | LabelValue[]): React.ReactNode => {
     if (Array.isArray(data)) {
       return data.map((item, index) => (
         <div key={index} className={styles["list-data__item"]}>
@@ -38,7 +33,7 @@ const ListDataItem: React.FC<ListDataItemProps> = ({ dataEmployeeAllInfo }) => {
     <>
       {Object.entries(dataEmployeeAllInfo).map(([_, value]) => (
         <div key={uuidv4()} className={styles["list-data"]}>
-          {renderData(value)} {/* Рендерим данные для каждого поля */}
+          {renderData(value)}
         </div>
       ))}
     </>

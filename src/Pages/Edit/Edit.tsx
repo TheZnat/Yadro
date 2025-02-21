@@ -10,6 +10,8 @@ import {
   updateEmployee,
 } from "../../app/entities/employee/model/thunks";
 import { findEmployeeById } from "../../app/Store/data/dataSlice";
+import { Employees } from "../../Shared/types/data";
+import { schemas } from "../../Shared/validation/validationSchema";
 
 const Edit: React.FC = () => {
   const navigate = useNavigate();
@@ -20,7 +22,8 @@ const Edit: React.FC = () => {
     (state: RootState) => state.data
   );
 
-  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [formData, setFormData] = useState<Employees | null>(null);
+  const [errors, setErrors] = useState<Record<string, string | null>>({});
 
   useEffect(() => {
     if (items.length === 0) {
@@ -46,17 +49,27 @@ const Edit: React.FC = () => {
     navigate(-1);
   };
 
-  const handleFormChange = (section: string, field: string, value: string) => {
+  const handleFormChange = (
+    section: keyof Employees,
+    field: string,
+    value: string
+  ) => {
     setFormData((prev) => {
+      if (!prev) return prev;
+
       if (section === "fio") {
-        return { ...prev, fio: value }; // Обновляем fio как строку
+        return { ...prev, fio: value };
       }
+
+      const sectionData = prev[section] as Record<string, any>;
+      const fieldData = sectionData?.[field] ?? {};
+
       return {
         ...prev,
         [section]: {
-          ...prev[section],
+          ...sectionData,
           [field]: {
-            ...prev[section][field],
+            ...fieldData,
             value,
           },
         },
@@ -64,15 +77,76 @@ const Edit: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!id) return;
-
-    await dispatch(updateEmployee({ employeeId: id, updatedData: formData }));
-    navigate(-1);
+  const validateField = (key: string, value: string) => {
+    const fieldValidation = schemas.custom.fields[key];
+    if (fieldValidation) {
+      try {
+        fieldValidation.validateSync(value);
+        return null; // Нет ошибки
+      } catch (error: any) {
+        return error.message; // Ошибка
+      }
+    }
+    return null;
   };
 
-  if (isLoading || !employee) {
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    let isValid = true;
+    const newErrors: Record<string, string | null> = {};
+
+    if (!formData) return;
+
+    // Проверяем все поля на ошибки
+    Object.entries(formData).forEach(([section, item]) => {
+      if (item && typeof item === "object") {
+        Object.entries(item).forEach(([fieldKey, fieldValue]) => {
+          console.log(`Validating field ${fieldKey} with value:`, fieldValue.value);
+          const error = validateField(fieldKey, fieldValue.value);
+          if (error) {
+            isValid = false;
+            newErrors[fieldKey] = error;
+          }
+        });
+      } else {
+        const error = validateField(section, item as string);
+        if (error) {
+          isValid = false;
+          newErrors[section] = error;
+        }
+      }
+    });
+
+    setErrors(newErrors);
+
+    // Если есть ошибки, не отправляем форму
+    if (!isValid) {
+      console.log("Form is invalid, showing alert");
+      alert("Пожалуйста, исправьте ошибки перед сохранением.");
+      return;
+    }
+
+    // Отправляем обновленные данные
+    if (id && formData) {
+      try {
+        console.log("Updating employee:", {
+          employeeId: id,
+          updatedData: formData,
+        });
+
+        await dispatch(updateEmployee({ employeeId: id, updatedData: formData }));
+        console.log("Employee updated successfully");
+
+        navigate(-1); // Переход после успешного обновления
+      } catch (error) {
+        console.error("Error updating employee:", error);
+        alert("Ошибка при сохранении данных");
+      }
+    }
+  };
+
+  if (isLoading || !employee || !formData) {
     return <div>Loading...</div>;
   }
 
@@ -86,23 +160,45 @@ const Edit: React.FC = () => {
       </div>
 
       <main className={styles["edit"]}>
-        <form className={styles["edit__form"]} onSubmit={handleSubmit}>
+        <form className={styles["edit__form"]}>
           <InputFrom
             section="fio"
-            data={{ fio: { label: "ФИО", value: formData.fio || "" } }} // Передаем объект с полем value для fio
+            data={{ fio: { label: "ФИО", value: formData.fio || "" } }}
             onChange={handleFormChange}
+            onError={(key, error) => {
+              setErrors((prevErrors) => ({
+                ...prevErrors,
+                [key]: error,
+              }));
+            }}
           />
           <InputFrom
             section="contactInfo"
-            data={formData.contactInfo} // Тут остаются объекты как есть
+            data={formData.contactInfo}
             onChange={handleFormChange}
+            onError={(key, error) => {
+              setErrors((prevErrors) => ({
+                ...prevErrors,
+                [key]: error,
+              }));
+            }}
           />
           <InputFrom
             section="workInfo"
-            data={formData.workInfo} // Тут тоже объект
+            data={formData.workInfo}
             onChange={handleFormChange}
+            onError={(key, error) => {
+              setErrors((prevErrors) => ({
+                ...prevErrors,
+                [key]: error,
+              }));
+            }}
           />
-          <button className={styles["edit__form__btn"]} type="submit">
+          <button
+            className={styles["edit__form__btn"]}
+            type="submit"
+            onClick={handleSubmit}
+          >
             Сохранить
           </button>
         </form>
