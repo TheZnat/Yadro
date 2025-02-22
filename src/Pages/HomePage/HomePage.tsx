@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import styles from "./HomePage.module.scss";
 import Search from "../../Features/Search/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../app/Store/store";
-import List from "../../Features/List/List";
 import { fetchEmployees } from "../../app/entities/employee/model/thunks";
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { isLoading } = useSelector((state: RootState) => state.data);
+  const List = lazy(() => import("../../Widgets/List/List"));
 
   useEffect(() => {
     dispatch(fetchEmployees());
@@ -24,7 +24,9 @@ const HomePage: React.FC = () => {
         <Search />
       </header>
       <main>
-        <List />
+        <Suspense fallback={<div>Загрузка информации...</div>}>
+          <List />
+        </Suspense>
       </main>
     </>
   );

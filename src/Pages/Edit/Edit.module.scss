@@ -1,10 +1,17 @@
-.wrapper {
-}
-
 .header {
   width: 100%;
-  padding: 17px 40px;
   box-sizing: border-box;
+  padding-top: 17px;
+  padding-right: 40px;
+  padding-left: 82px;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .edit {
@@ -22,4 +29,9 @@
   justify-content: center;
   flex-direction: column;
   gap: 24px;
+}
+
+.edit__form__btn {
+  width: 260px;
+  height: 42px;
 }

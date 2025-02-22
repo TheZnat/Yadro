@@ -12,6 +12,7 @@ import {
 import { findEmployeeById } from "../../app/Store/data/dataSlice";
 import { Employees } from "../../Shared/types/data";
 import { schemas } from "../../Shared/validation/validationSchema";
+import Button from "../../Widgets/Button/Button";
 
 const Edit: React.FC = () => {
   const navigate = useNavigate();
@@ -102,7 +103,10 @@ const Edit: React.FC = () => {
     Object.entries(formData).forEach(([section, item]) => {
       if (item && typeof item === "object") {
         Object.entries(item).forEach(([fieldKey, fieldValue]) => {
-          console.log(`Validating field ${fieldKey} with value:`, fieldValue.value);
+          console.log(
+            `Validating field ${fieldKey} with value:`,
+            fieldValue.value
+          );
           const error = validateField(fieldKey, fieldValue.value);
           if (error) {
             isValid = false;
@@ -122,7 +126,6 @@ const Edit: React.FC = () => {
 
     // Если есть ошибки, не отправляем форму
     if (!isValid) {
-      console.log("Form is invalid, showing alert");
       alert("Пожалуйста, исправьте ошибки перед сохранением.");
       return;
     }
@@ -135,10 +138,11 @@ const Edit: React.FC = () => {
           updatedData: formData,
         });
 
-        await dispatch(updateEmployee({ employeeId: id, updatedData: formData }));
-        console.log("Employee updated successfully");
+        await dispatch(
+          updateEmployee({ employeeId: id, updatedData: formData })
+        );
 
-        navigate(-1); // Переход после успешного обновления
+        navigate(-1);
       } catch (error) {
         console.error("Error updating employee:", error);
         alert("Ошибка при сохранении данных");
@@ -151,9 +155,9 @@ const Edit: React.FC = () => {
   }
 
   return (
-    <div className={styles["wrapper"]}>
+    <>
       <header className={styles["header"]}>
-        <h2>Тестовое задание в компанию Yadro</h2>
+        <h2 className={styles["title"]}>Тестовое задание в компанию Yadro</h2>
       </header>
       <div>
         <BackPanel onClickFunction={handleGoBack} />
@@ -194,16 +198,16 @@ const Edit: React.FC = () => {
               }));
             }}
           />
-          <button
-            className={styles["edit__form__btn"]}
+          <Button
+            onClickHandler={handleSubmit}
             type="submit"
-            onClick={handleSubmit}
+            className={styles["edit__form__btn"]}
           >
             Сохранить
-          </button>
+          </Button>
         </form>
       </main>
-    </div>
+    </>
   );
 };
 

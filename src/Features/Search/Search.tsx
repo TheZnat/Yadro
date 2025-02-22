@@ -12,6 +12,7 @@ import {
   applyFilters,
 } from "../../app/Store/filterSlice/filterSlice";
 import Dropdown from "../Dropdown/Dropdown";
+
 const Search: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const { dataStatusOptions, dataDivisionOptions, dataCityOptions } =

@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "./ProfileHeader.module.scss";
 import { Employees } from "../../Shared/types/data";
-
-interface ProfileHeaderProps {
-  dataEmployee: Employees;
-  handlerDeleteBth: (id: string) => void;
-  handlerEditBth: () => void;
-}
+import { ProfileHeaderProps } from "./ProfileHeader.props";
+import Button from "../../Widgets/Button/Button";
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   dataEmployee = {} as Employees,
@@ -61,18 +57,20 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
         </div>
 
         <div className={styles["profile-header__actions"]}>
-          <button
+          <Button
             className={styles["profile-header__actions__button"]}
-            onClick={handlerEditBth}
+            onClickHandler={handlerEditBth}
+            type="button"
           >
             Изменить данные
-          </button>
-          <button
+          </Button>
+          <Button
             className={styles["profile-header__actions__button"]}
-            onClick={() => handlerDeleteBth(dataEmployee.id)}
+            type="button"
+            onClickHandler={() => handlerDeleteBth(dataEmployee.id)}
           >
             Удалить сотрудника
-          </button>
+          </Button>
         </div>
       </div>
     </div>

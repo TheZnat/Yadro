@@ -2,12 +2,7 @@ import React from "react";
 import styles from "./ListDataItem.module.scss";
 import { v4 as uuidv4 } from "uuid";
 import { LabelValue } from "../../Shared/types/data";
-
-interface ListDataItemProps {
-  dataEmployeeAllInfo: {
-    [key: string]: LabelValue | LabelValue[];
-  };
-}
+import { ListDataItemProps } from "./ListDataItem.props";
 
 const ListDataItem: React.FC<ListDataItemProps> = ({ dataEmployeeAllInfo }) => {
   const renderData = (data: LabelValue | LabelValue[]): React.ReactNode => {

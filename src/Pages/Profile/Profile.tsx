@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import styles from "./Profile.module.scss";
 import ProfileHeader from "../../Features/ProfileHeader/ProfileHeader";
-import ListDataItem from "../../Features/ListDataItem/ListDataItem";
 import BackPanel from "../../Widgets/BackPanel/BackPanel";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +11,9 @@ import {
   fetchEmployees,
 } from "../../app/entities/employee/model/thunks";
 
+const ListDataItem = React.lazy(
+  () => import("../../Features/ListDataItem/ListDataItem")
+);
 const Profile: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch<AppDispatch>();
@@ -71,8 +73,10 @@ const Profile: React.FC = () => {
       </header>
       <BackPanel onClickFunction={handleClick} />
       <main className={styles["list-data--wrapper"]}>
-        <ListDataItem dataEmployeeAllInfo={employee.contactInfo} />
-        <ListDataItem dataEmployeeAllInfo={employee.workInfo} />
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <ListDataItem dataEmployeeAllInfo={employee.contactInfo} />
+          <ListDataItem dataEmployeeAllInfo={employee.workInfo} />
+        </Suspense>
       </main>
     </>
   );

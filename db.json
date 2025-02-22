@@ -1,52 +1,8 @@
 {
   "employees": [
     {
-      "id": "ec8f9b5b-156a-4b85-8b61-546509245249",
-      "fio": "Ананан Ослова",
-      "workInfo": {
-        "status": {
-          "label": "Статус",
-          "value": "работает"
-        },
-        "division": {
-          "label": "Позиция",
-          "value": "DevOps"
-        },
-        "level": {
-          "label": "Уровень",
-          "value": "Middle"
-        },
-        "schedule": {
-          "label": "График работы",
-          "value": "Удаленно"
-        },
-        "dateOfHiring": {
-          "label": "Дата найма",
-          "value": "01.06.2022"
-        },
-        "avatar": {
-          "label": "Фото",
-          "value": "https://20.img.avito.st/image/1/1.WbiPXLa49VGZ9E9bsUUN9rr-91cx_VdYgff3Uz_1_Vs5.iZ7qGyvwJSD2_-HDGLAhgEI9sXTr_39ox_tEc2pOXqg"
-        }
-      },
-      "contactInfo": {
-        "email": {
-          "label": "Email",
-          "value": "sdsdss@yandex.ru"
-        },
-        "phone": {
-          "label": "Телефон",
-          "value": "+7(999)999-99-99"
-        },
-        "city": {
-          "label": "Город",
-          "value": "Санкт-Петербург"
-        }
-      }
-    },
-    {
       "id": "f4356c47-8a71-4df8-b682-259b4a11f0a3",
-      "fio": "Иван Сидировв",
+      "fio": "Иван Сидиров",
       "workInfo": {
         "status": {
           "label": "Статус",

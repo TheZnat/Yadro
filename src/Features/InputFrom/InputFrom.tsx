@@ -2,18 +2,7 @@ import React, { useState } from "react";
 import styles from "./InputFrom.module.scss";
 import { Employees } from "../../Shared/types/data";
 import { schemas } from "../../Shared/validation/validationSchema";
-
-interface DataItem {
-  label: string;
-  value: string;
-}
-
-interface ListDataItemProps {
-  section: keyof Employees;
-  data: Record<string, DataItem>;
-  onChange: (section: keyof Employees, field: string, value: string) => void;
-  onError: (key: string, error: string | null) => void;
-}
+import { ListDataItemProps } from "./InputFrom.props";
 
 const InputFrom: React.FC<ListDataItemProps> = ({
   section,
@@ -44,11 +33,11 @@ const InputFrom: React.FC<ListDataItemProps> = ({
     const error = getValidationError(key, value);
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [key]: error || null, 
+      [key]: error || null,
     }));
 
     onChange(section, key, value);
-    onError(key, error); 
+    onError(key, error);
   };
 
   return (

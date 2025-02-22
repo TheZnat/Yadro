@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./ListItem.module.scss";
 import defaultIcon from "../../assets/No-image-icon.png";
-import { Employees } from "../../Shared/types/data";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
-
-interface ListItemProps {
-  dataEmployee: Employees;
-}
+import { ListItemProps } from "./ListItemProps.props";
+import Button from "../Button/Button";
 
 const ListItem: React.FC<ListItemProps> = ({ dataEmployee }) => {
   const navigate = useNavigate();
@@ -77,13 +74,13 @@ const ListItem: React.FC<ListItemProps> = ({ dataEmployee }) => {
           </p>
         </div>
 
-        <button
+        <Button
           type="button"
           className={styles["listItem__status__bth"]}
-          onClick={handleEdit}
+          onClickHandler={handleEdit}
         >
           Редактировать
-        </button>
+        </Button>
       </div>
     </div>
   );
