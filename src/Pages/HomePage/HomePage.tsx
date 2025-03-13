@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useEffect } from "react";
 import styles from "./HomePage.module.scss";
-import Search from "../../Features/Search/Search";
+import { Search } from "../../Widgets/index";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../app/Store/store";
 import { fetchEmployees } from "../../app/entities/employee/model/thunks";
@@ -8,7 +8,9 @@ import { fetchEmployees } from "../../app/entities/employee/model/thunks";
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { isLoading } = useSelector((state: RootState) => state.data);
-  const List = lazy(() => import("../../Widgets/List/List"));
+  const List = lazy(() =>
+    import("../../Widgets/index").then((module) => ({ default: module.List }))
+  );
 
   useEffect(() => {
     dispatch(fetchEmployees());

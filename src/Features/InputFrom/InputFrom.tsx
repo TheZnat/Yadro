@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./InputFrom.module.scss";
-import { Employees } from "../../Shared/types/data";
-import { schemas } from "../../Shared/validation/validationSchema";
+import { Employees } from "../../Shared/types/index";
+import { schemas } from "../../Shared/lib/validationSchema";
 import { ListDataItemProps } from "./InputFrom.props";
 
 const InputFrom: React.FC<ListDataItemProps> = ({

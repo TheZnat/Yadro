@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Employees } from "../../../../Shared/types/data";
+import { Employees } from "../../../../Shared/types/index";
 
 const API_URL = "http://localhost:3001/employees";
 

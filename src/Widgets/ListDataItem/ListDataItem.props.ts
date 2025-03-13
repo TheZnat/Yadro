@@ -1,4 +1,4 @@
-import { LabelValue } from "../../Shared/types/data";
+import { LabelValue } from "../../Shared/types/index";
 
 export interface ListDataItemProps {
   dataEmployeeAllInfo: {

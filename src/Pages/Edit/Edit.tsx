@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import BackPanel from "../../Widgets/BackPanel/BackPanel";
 import styles from "./Edit.module.scss";
 import InputFrom from "../../Features/InputFrom/InputFrom";
 import { useNavigate, useParams } from "react-router-dom";
@@ -10,9 +9,9 @@ import {
   updateEmployee,
 } from "../../app/entities/employee/model/thunks";
 import { findEmployeeById } from "../../app/Store/data/dataSlice";
-import { Employees } from "../../Shared/types/data";
-import { schemas } from "../../Shared/validation/validationSchema";
-import Button from "../../Widgets/Button/Button";
+import { Employees } from "../../Shared/types/index";
+import { schemas } from "../../Shared/lib/validationSchema";
+import { Button, BackPanel } from "../../Shared/ui/index";
 
 const Edit: React.FC = () => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { AppDispatch } from "../store";
 import { ICFilterState } from "./filterSlice.props";
-import { Employees } from "../../../Shared/types/data";
+import { Employees } from "../../../Shared/types/index";
 import { setFilteredItems } from "../data/dataSlice";
 
 const initialState: ICFilterState = {

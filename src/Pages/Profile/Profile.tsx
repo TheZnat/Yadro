@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import styles from "./Profile.module.scss";
-import ProfileHeader from "../../Features/ProfileHeader/ProfileHeader";
-import BackPanel from "../../Widgets/BackPanel/BackPanel";
+import {ProfileHeader} from "../../Widgets/index";
+import {BackPanel} from "../../Shared/ui/index";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../app/Store/store";
@@ -12,7 +12,7 @@ import {
 } from "../../app/entities/employee/model/thunks";
 
 const ListDataItem = React.lazy(
-  () => import("../../Features/ListDataItem/ListDataItem")
+  () => import("../../Widgets/index").then((module) => ({ default: module.ListDataItem }))
 );
 const Profile: React.FC = () => {
   const { id } = useParams<{ id: string }>();

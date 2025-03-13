@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ListDataItem.module.scss";
 import { v4 as uuidv4 } from "uuid";
-import { LabelValue } from "../../Shared/types/data";
+import { LabelValue } from "../../Shared/types/index";
 import { ListDataItemProps } from "./ListDataItem.props";
 
 const ListDataItem: React.FC<ListDataItemProps> = ({ dataEmployeeAllInfo }) => {

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ProfileHeader.module.scss";
-import { Employees } from "../../Shared/types/data";
+import { Employees } from "../../Shared/types/index";
 import { ProfileHeaderProps } from "./ProfileHeader.props";
-import Button from "../../Widgets/Button/Button";
+import {Button} from "../../Shared/ui/index";
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   dataEmployee = {} as Employees,

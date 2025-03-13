@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./ListItem.module.scss";
-import defaultIcon from "../../assets/No-image-icon.png";
+import defaultIcon from "../../Shared/assets/No-image-icon.png";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 import { ListItemProps } from "./ListItemProps.props";
-import Button from "../Button/Button";
+import {Button} from "../../Shared/ui/index";
 
 const ListItem: React.FC<ListItemProps> = ({ dataEmployee }) => {
   const navigate = useNavigate();

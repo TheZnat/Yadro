@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICDataSlice } from "./dataSlice.props";
-import { Employees } from "../../../Shared/types/data";
+import { Employees } from "../../../Shared/types/index";
 import { deleteEmployee, fetchEmployees, updateEmployee } from "../../entities/employee/model/thunks";
 
 const initialState: ICDataSlice = {

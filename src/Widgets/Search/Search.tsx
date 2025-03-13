@@ -11,7 +11,7 @@ import {
   setSearch,
   applyFilters,
 } from "../../app/Store/filterSlice/filterSlice";
-import Dropdown from "../Dropdown/Dropdown";
+import { Dropdown } from "../../Shared/ui/index";
 
 const Search: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
